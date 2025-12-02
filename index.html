@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- EDIT HERE: Change the page title -->
     <title>Your Name - Portfolio</title>
     <!-- Load Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -86,43 +85,12 @@
             opacity: 1;
         }
         
-        /*
-        ===================================================================
-        EDIT HERE: IMAGE PLACEHOLDERS (24 total)
-        ===================================================================
-        */
-        /* NOTE for Grid Preview: The current grid uses a fixed 1:1 aspect ratio (h-72). 
-        For optimal quality, use square source images (e.g., 800x800, 1000x1000). 
-        The JS uses these exact URLs for the lightbox as well. */
-        .img-1 { background-image: url('https://placehold.co/800x800/F5F5F5/15acbe?text=Project+One'); }
-        .img-2 { background-image: url('https://placehold.co/800x800/E0E0E0/15acbe?text=Project+Two'); }
-        .img-3 { background-image: url('https://placehold.co/800x800/F0F0F0/15acbe?text=Project+Three'); }
-        .img-4 { background-image: url('https://placehold.co/800x800/D9D9D9/15acbe?text=Project+Four'); }
-        .img-5 { background-image: url('https://placehold.co/800x800/E8E8E8/15acbe?text=Project+Five'); }
-        .img-6 { background-image: url('https://placehold.co/800x800/F0F0F0/15acbe?text=Project+Six'); }
-        .img-7 { background-image: url('https://placehold.co/800x800/F5F5F5/15acbe?text=Project+Seven'); }
-        .img-8 { background-image: url('https://placehold.co/800x800/E0E0E0/15acbe?text=Project+Eight'); }
-        .img-9 { background-image: url('https://placehold.co/800x800/F0F0F0/15acbe?text=Project+Nine'); }
-        .img-10 { background-image: url('https://placehold.co/800x800/D9D9D9/15acbe?text=Project+Ten'); }
-        .img-11 { background-image: url('https://placehold.co/800x800/E8E8E8/15acbe?text=Project+Eleven'); }
-        .img-12 { background-image: url('https://placehold.co/800x800/F5F5F5/15acbe?text=Project+Twelve'); }
-        .img-13 { background-image: url('https://placehold.co/800x800/E0E0E0/15acbe?text=Project+Thirteen'); }
-        .img-14 { background-image: url('https://placehold.co/800x800/F0F0F0/15acbe?text=Project+Fourteen'); }
-        .img-15 { background-image: url('https://placehold.co/800x800/D9D9D9/15acbe?text=Project+Fifteen'); }
-        .img-16 { background-image: url('https://placehold.co/800x800/E8E8E8/15acbe?text=Project+Sixteen'); }
-        .img-17 { background-image: url('https://placehold.co/800x800/F5F5F5/15acbe?text=Project+Seventeen'); }
-        .img-18 { background-image: url('https://placehold.co/800x800/E0E0E0/15acbe?text=Project+Eighteen'); }
-        .img-19 { background-image: url('https://placehold.co/800x800/F0F0F0/15acbe?text=Project+Nineteen'); }
-        .img-20 { background-image: url('https://placehold.co/800x800/D9D9D9/15acbe?text=Project+Twenty'); }
-        .img-21 { background-image: url('https://placehold.co/800x800/E8E8E8/15acbe?text=Project+Twenty+One'); }
-        .img-22 { background-image: url('https://placehold.co/800x800/F5F5F5/15acbe?text=Project+Twenty+Two'); }
-        .img-23 { background-image: url('https://placehold.co/800x800/D9D9D9/15acbe?text=Project+Twenty+Three'); }
-        .img-24 { background-image: url('https://placehold.co/800x800/E0E0E0/15acbe?text=Project+Twenty+Four'); }
-
-
-        /* Custom styles for the nav menu to match the reference's unique structure */
+        /* Navigation link styles */
         .nav-link {
-            @apply text-xs font-semibold uppercase tracking-wider text-gray-700 hover:text-[#15acbe] transition duration-150;
+            @apply text-xs font-semibold uppercase tracking-wider text-gray-700 transition duration-150;
+        }
+        .nav-link.active, .nav-link:hover {
+            color: #15acbe;
         }
 
         /* Generic social icon spacing and transition */
@@ -134,6 +102,74 @@
         .behance-brand-hover:hover {
             color: #161e33; /* Darker variation */
         }
+
+        /* Content section base style (hidden by default) */
+        .content-section {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+        /* Content section active style */
+        .content-section.active {
+            display: block;
+            opacity: 1;
+        }
+
+        /*
+        ===================================================================
+        EDIT HERE: IMAGE PLACEHOLDERS (46 total: 24 Illustration, 22 Design)
+        ===================================================================
+        */
+        /* Illustration Projects (1-24) - Indexes 0-23 */
+        .img-1 { background-image: url('https://placehold.co/800x800/F5F5F5/15acbe?text=Illus.+One'); }
+        .img-2 { background-image: url('https://placehold.co/800x800/E0E0E0/15acbe?text=Illus.+Two'); }
+        .img-3 { background-image: url('https://placehold.co/800x800/F0F0F0/15acbe?text=Illus.+Three'); }
+        .img-4 { background-image: url('https://placehold.co/800x800/D9D9D9/15acbe?text=Illus.+Four'); }
+        .img-5 { background-image: url('https://placehold.co/800x800/E8E8E8/15acbe?text=Illus.+Five'); }
+        .img-6 { background-image: url('https://placehold.co/800x800/F0F0F0/15acbe?text=Illus.+Six'); }
+        .img-7 { background-image: url('https://placehold.co/800x800/F5F5F5/15acbe?text=Illus.+Seven'); }
+        .img-8 { background-image: url('https://placehold.co/800x800/E0E0E0/15acbe?text=Illus.+Eight'); }
+        .img-9 { background-image: url('https://placehold.co/800x800/F0F0F0/15acbe?text=Illus.+Nine'); }
+        .img-10 { background-image: url('https://placehold.co/800x800/D9D9D9/15acbe?text=Illus.+Ten'); }
+        .img-11 { background-image: url('https://placehold.co/800x800/E8E8E8/15acbe?text=Illus.+Eleven'); }
+        .img-12 { background-image: url('https://placehold.co/800x800/F5F5F5/15acbe?text=Illus.+Twelve'); }
+        .img-13 { background-image: url('https://placehold.co/800x800/E0E0E0/15acbe?text=Illus.+Thirteen'); }
+        .img-14 { background-image: url('https://placehold.co/800x800/F0F0F0/15acbe?text=Illus.+Fourteen'); }
+        .img-15 { background-image: url('https://placehold.co/800x800/D9D9D9/15acbe?text=Illus.+Fifteen'); }
+        .img-16 { background-image: url('https://placehold.co/800x800/E8E8E8/15acbe?text=Illus.+Sixteen'); }
+        .img-17 { background-image: url('https://placehold.co/800x800/F5F5F5/15acbe?text=Illus.+Seventeen'); }
+        .img-18 { background-image: url('https://placehold.co/800x800/E0E0E0/15acbe?text=Illus.+Eighteen'); }
+        .img-19 { background-image: url('https://placehold.co/800x800/F0F0F0/15acbe?text=Illus.+Nineteen'); }
+        .img-20 { background-image: url('https://placehold.co/800x800/D9D9D9/15acbe?text=Illus.+Twenty'); }
+        .img-21 { background-image: url('https://placehold.co/800x800/E8E8E8/15acbe?text=Illus.+Twenty+One'); }
+        .img-22 { background-image: url('https://placehold.co/800x800/F5F5F5/15acbe?text=Illus.+Twenty+Two'); }
+        .img-23 { background-image: url('https://placehold.co/800x800/D9D9D9/15acbe?text=Illus.+Twenty+Three'); }
+        .img-24 { background-image: url('https://placehold.co/800x800/E0E0E0/15acbe?text=Illus.+Twenty+Four'); }
+
+        /* Graphic Design Projects (1-22) - Indexes 24-45 */
+        .img-25 { background-image: url('https://placehold.co/800x800/FFC0CB/15acbe?text=Design+Logo+1'); }
+        .img-26 { background-image: url('https://placehold.co/800x800/ADD8E6/15acbe?text=Design+Branding+2'); }
+        .img-27 { background-image: url('https://placehold.co/800x800/90EE90/15acbe?text=Design+Poster+3'); }
+        .img-28 { background-image: url('https://placehold.co/800x800/FFA07A/15acbe?text=Design+UI/UX+4'); }
+        .img-29 { background-image: url('https://placehold.co/800x800/BA55D3/15acbe?text=Design+Packaging+5'); }
+        .img-30 { background-image: url('https://placehold.co/800x800/87CEFA/15acbe?text=Design+Web+6'); }
+        .img-31 { background-image: url('https://placehold.co/800x800/F08080/15acbe?text=Design+Book+7'); }
+        .img-32 { background-image: url('https://placehold.co/800x800/20B2AA/15acbe?text=Design+Editorial+8'); }
+        .img-33 { background-image: url('https://placehold.co/800x800/DDA0DD/15acbe?text=Design+Infographic+9'); }
+        .img-34 { background-image: url('https://placehold.co/800x800/FFD700/15acbe?text=Design+Icon+10'); }
+        .img-35 { background-image: url('https://placehold.co/800x800/8A2BE2/15acbe?text=Design+Motion+11'); }
+        .img-36 { background-image: url('https://placehold.co/800x800/6A5ACD/15acbe?text=Design+3D+12'); }
+        /* NEW Design Projects (13-22) */
+        .img-37 { background-image: url('https://placehold.co/800x800/98FF98/15acbe?text=Design+Ad+13'); }
+        .img-38 { background-image: url('https://placehold.co/800x800/B0E0E6/15acbe?text=Design+Flyer+14'); }
+        .img-39 { background-image: url('https://placehold.co/800x800/FFB6C1/15acbe?text=Design+Social+15'); }
+        .img-40 { background-image: url('https://placehold.co/800x800/9370DB/15acbe?text=Design+Vector+16'); }
+        .img-41 { background-image: url('https://placehold.co/800x800/7FFFD4/15acbe?text=Design+Corporate+17'); }
+        .img-42 { background-image: url('https://placehold.co/800x800/D8BFD8/15acbe?text=Design+Typo+18'); }
+        .img-43 { background-image: url('https://placehold.co/800x800/F0E68C/15acbe?text=Design+Event+19'); }
+        .img-44 { background-image: url('https://placehold.co/800x800/40E0D0/15acbe?text=Design+Album+20'); }
+        .img-45 { background-image: url('https://placehold.co/800x800/BDB76B/15acbe?text=Design+Print+21'); }
+        .img-46 { background-image: url('https://placehold.co/800x800/FFA500/15acbe?text=Design+Concept+22'); }
     </style>
 </head>
 <body class="pt-24 lg:pt-32">
@@ -144,41 +180,35 @@
             
             <!-- Logo and Tagline -->
             <div class="flex-shrink-0 text-center lg:text-left mb-3 lg:mb-0">
-                <!-- Logo text color changed to #15acbe -->
                 <div class="logo-font text-3xl text-[#15acbe]">
                     YOUR NAME HERE
-                    <!-- Small character illustration placeholder - change the emoji or remove -->
                     <span class="inline-block text-xl ml-2 text-blue-500">✨</span>
                 </div>
-                <!-- EDIT HERE: Change your profession/title -->
                 <div class="text-xs font-medium tracking-widest text-gray-500 uppercase mt-0.5">
                     ART DIRECTOR | AUTHOR-ILLUSTRATOR
                 </div>
             </div>
 
             <!-- Main Navigation and Social Icons -->
-            <nav class="flex flex-col lg:flex-row items-center space-y-2 lg:space-y-0 lg:space-x-6">
+            <nav class="flex flex-col lg:flex-row items-center space-y-2 lg:space-y-0 lg:space-x-6" id="main-nav">
                 
                 <!-- Main Links (Illustration, Graphic Design, About, Contact) -->
                 <div class="flex flex-wrap justify-center lg:justify-start gap-x-4 gap-y-1">
-                    <!-- Links use the new blue hover color via .nav-link CSS -->
-                    <a href="#" class="nav-link">Illustration</a>
-                    <a href="#" class="nav-link">Graphic Design</a>
-                    <a href="#" class="nav-link">About</a>
-                    <a href="#" class="nav-link">Contact</a>
+                    <!-- Updated links to use #hash for section switching -->
+                    <a href="#illustration" class="nav-link active" data-section="illustration">Illustration</a>
+                    <a href="#design" class="nav-link" data-section="design">Graphic Design</a>
+                    <a href="#about" class="nav-link" data-section="about">About</a>
+                    <a href="#contact" class="nav-link" data-section="contact">Contact</a>
                 </div>
 
-                <!-- Social Icons (Instagram, LinkedIn, and Behance) -->
+                <!-- Social Icons -->
                 <div class="flex mt-2 lg:mt-0">
-                    <!-- Instagram: Hover color changed to new blue -->
                     <a href="#" class="social-icon text-gray-500 hover:text-[#15acbe]">
                         <i data-lucide="instagram" class="w-4 h-4"></i>
                     </a>
-                    <!-- LinkedIn: Hover color changed to new blue -->
                     <a href="#" class="social-icon text-gray-500 hover:text-[#15acbe]">
                         <i data-lucide="linkedin" class="w-4 h-4"></i>
                     </a>
-                    <!-- Behance: This icon is intentionally set to the primary blue, with a darker hover effect. -->
                     <a href="#" class="social-icon text-[#15acbe] behance-brand-hover">
                         <i data-lucide="behance" class="w-4 h-4"></i>
                     </a>
@@ -187,192 +217,178 @@
         </div>
     </header>
 
-    <!-- Portfolio Grid Section -->
+    <!-- Portfolio Grid Section Container -->
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-12">
+        
         <!-- 
         ===================================================================
-        THE ARTWORK GALLERY: UNIFORM SQUARE GRID (24 Projects)
+        SECTION 1: ILLUSTRATION GALLERY (24 Projects)
         ===================================================================
         -->
-        <section id="project-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <section id="illustration-section" class="content-section active">
+            <h2 class="text-3xl font-extrabold text-gray-900 mb-8 text-center">Illustration Work</h2>
+            <div id="illustration-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
-            <!-- 
-            NOTE: Added data-index, data-src, and data-title attributes for JS Lightbox logic.
-            The data-src value here *must* be the final, full-size image URL.
-            -->
+                <!-- ILLUSTRATION ITEMS (0 to 23) -->
+                <div class="relative overflow-hidden rounded-xl shadow-lg art-placeholder img-1 h-72" data-index="0" data-src="https://placehold.co/1000x1000/F5F5F5/15acbe?text=ILLUSTRATION+PROJECT+ONE+FULL" data-title="Project One: Digital Character Study">
+                    <div class="project-overlay"><h2>Digital Character Study</h2></div>
+                </div>
+                <div class="relative overflow-hidden rounded-xl shadow-lg art-placeholder img-2 h-72" data-index="1" data-src="https://placehold.co/1000x1000/E0E0E0/15acbe?text=ILLUSTRATION+PROJECT+TWO+FULL" data-title="Project Two: Landscape Painting">
+                     <div class="project-overlay"><h2>Landscape Painting</h2></div>
+                </div>
+                <div class="relative overflow-hidden rounded-xl shadow-lg art-placeholder img-3 h-72" data-index="2" data-src="https://placehold.co/1000x1000/F0F0F0/15acbe?text=ILLUSTRATION+PROJECT+THREE+FULL" data-title="Project Three: Ink Sketch">
+                     <div class="project-overlay"><h2>Ink Sketch</h2></div>
+                </div>
+                <div class="relative overflow-hidden rounded-xl shadow-lg art-placeholder img-4 h-72" data-index="3" data-src="https://placehold.co/1000x1000/D9D9D9/15acbe?text=ILLUSTRATION+PROJECT+FOUR+FULL" data-title="Project Four: Book Cover">
+                    <div class="project-overlay"><h2>Book Cover</h2></div>
+                </div>
+                <div class="relative overflow-hidden rounded-xl shadow-lg art-placeholder img-5 h-72" data-index="4" data-src="https://placehold.co/1000x1000/E8E8E8/15acbe?text=ILLUSTRATION+PROJECT+FIVE+FULL" data-title="Project Five: Children's Art">
+                     <div class="project-overlay"><h2>Children's Art</h2></div>
+                </div>
+                <div class="relative overflow-hidden rounded-xl shadow-lg art-placeholder img-6 h-72" data-index="5" data-src="https://placehold.co/1000x1000/F0F0F0/15acbe?text=ILLUSTRATION+PROJECT+SIX+FULL" data-title="Project Six: Sci-Fi Concept">
+                     <div class="project-overlay"><h2>Sci-Fi Concept</h2></div>
+                </div>
+                <div class="relative overflow-hidden rounded-xl shadow-lg art-placeholder img-7 h-72" data-index="6" data-src="https://placehold.co/1000x1000/F5F5F5/15acbe?text=ILLUSTRATION+PROJECT+SEVEN+FULL" data-title="Project Seven: Still Life">
+                     <div class="project-overlay"><h2>Still Life</h2></div>
+                </div>
+                <div class="relative overflow-hidden rounded-xl shadow-lg art-placeholder img-8 h-72" data-index="7" data-src="https://placehold.co/1000x1000/E0E0E0/15acbe?text=ILLUSTRATION+PROJECT+EIGHT+FULL" data-title="Project Eight: Fantasy Scene">
+                     <div class="project-overlay"><h2>Fantasy Scene</h2></div>
+                </div>
+                <div class="relative overflow-hidden rounded-xl shadow-lg art-placeholder img-9 h-72" data-index="8" data-src="https://placehold.co/1000x1000/F0F0F0/15acbe?text=ILLUSTRATION+PROJECT+NINE+FULL" data-title="Project Nine: Animal Portrait">
+                    <div class="project-overlay"><h2>Animal Portrait</h2></div>
+                </div>
+                <div class="relative overflow-hidden rounded-xl shadow-lg art-placeholder img-10 h-72" data-index="9" data-src="https://placehold.co/1000x1000/D9D9D9/15acbe?text=ILLUSTRATION+PROJECT+TEN+FULL" data-title="Project Ten: Vector Art">
+                     <div class="project-overlay"><h2>Vector Art</h2></div>
+                </div>
+                <div class="relative overflow-hidden rounded-xl shadow-lg art-placeholder img-11 h-72" data-index="10" data-src="https://placehold.co/1000x1000/E8E8E8/15acbe?text=ILLUSTRATION+PROJECT+ELEVEN+FULL" data-title="Project Eleven: Comic Panel">
+                     <div class="project-overlay"><h2>Comic Panel</h2></div>
+                </div>
+                <div class="relative overflow-hidden rounded-xl shadow-lg art-placeholder img-12 h-72" data-index="11" data-src="https://placehold.co/1000x1000/F5F5F5/15acbe?text=ILLUSTRATION+PROJECT+TWELVE+FULL" data-title="Project Twelve: Texture Study">
+                     <div class="project-overlay"><h2>Texture Study</h2></div>
+                </div>
+                <div class="relative overflow-hidden rounded-xl shadow-lg art-placeholder img-13 h-72" data-index="12" data-src="https://placehold.co/1000x1000/E0E0E0/15acbe?text=ILLUSTRATION+PROJECT+THIRTEEN+FULL" data-title="Project Thirteen: Concept Sketch">
+                    <div class="project-overlay"><h2>Concept Sketch</h2></div>
+                </div>
+                <div class="relative overflow-hidden rounded-xl shadow-lg art-placeholder img-14 h-72" data-index="13" data-src="https://placehold.co/1000x1000/F0F0F0/15acbe?text=ILLUSTRATION+PROJECT+FOURTEEN+FULL" data-title="Project Fourteen: Portrait Commission">
+                     <div class="project-overlay"><h2>Portrait Commission</h2></div>
+                </div>
+                <div class="relative overflow-hidden rounded-xl shadow-lg art-placeholder img-15 h-72" data-index="14" data-src="https://placehold.co/1000x1000/D9D9D9/15acbe?text=ILLUSTRATION+PROJECT+FIFTEEN+FULL" data-title="Project Fifteen: Abstract Art">
+                     <div class="project-overlay"><h2>Abstract Art</h2></div>
+                </div>
+                <div class="relative overflow-hidden rounded-xl shadow-lg art-placeholder img-16 h-72" data-index="15" data-src="https://placehold.co/1000x1000/E8E8E8/15acbe?text=ILLUSTRATION+PROJECT+SIXTEEN+FULL" data-title="Project Sixteen: Digital Painting">
+                     <div class="project-overlay"><h2>Digital Painting</h2></div>
+                </div>
+                <div class="relative overflow-hidden rounded-xl shadow-lg art-placeholder img-17 h-72" data-index="16" data-src="https://placehold.co/1000x1000/F5F5F5/15acbe?text=ILLUSTRATION+PROJECT+SEVENTEEN+FULL" data-title="Project Seventeen: Watercolour">
+                     <div class="project-overlay"><h2>Watercolour</h2></div>
+                </div>
+                <div class="relative overflow-hidden rounded-xl shadow-lg art-placeholder img-18 h-72" data-index="17" data-src="https://placehold.co/1000x1000/E0E0E0/15acbe?text=ILLUSTRATION+PROJECT+EIGHTEEN+FULL" data-title="Project Eighteen: Character Sheet">
+                    <div class="project-overlay"><h2>Character Sheet</h2></div>
+                </div>
+                <div class="relative overflow-hidden rounded-xl shadow-lg art-placeholder img-19 h-72" data-index="18" data-src="https://placehold.co/1000x1000/F0F0F0/15acbe?text=ILLUSTRATION+PROJECT+NINETEEN+FULL" data-title="Project Nineteen: Environmental Art">
+                     <div class="project-overlay"><h2>Environmental Art</h2></div>
+                </div>
+                <div class="relative overflow-hidden rounded-xl shadow-lg art-placeholder img-20 h-72" data-index="19" data-src="https://placehold.co/1000x1000/D9D9D9/15acbe?text=ILLUSTRATION+PROJECT+TWENTY+FULL" data-title="Project Twenty: Doodle Art">
+                     <div class="project-overlay"><h2>Doodle Art</h2></div>
+                </div>
+                <div class="relative overflow-hidden rounded-xl shadow-lg art-placeholder img-21 h-72" data-index="20" data-src="https://placehold.co/1000x1000/E8E8E8/15acbe?text=ILLUSTRATION+PROJECT+TWENTY+ONE+FULL" data-title="Project Twenty One: Fan Art">
+                     <div class="project-overlay"><h2>Fan Art</h2></div>
+                </div>
+                <div class="relative overflow-hidden rounded-xl shadow-lg art-placeholder img-22 h-72" data-index="21" data-src="https://placehold.co/1000x1000/F5F5F5/15acbe?text=ILLUSTRATION+PROJECT+TWENTY+TWO+FULL" data-title="Project Twenty Two: Geometric Design">
+                     <div class="project-overlay"><h2>Geometric Design</h2></div>
+                </div>
+                <div class="relative overflow-hidden rounded-xl shadow-lg art-placeholder img-23 h-72" data-index="22" data-src="https://placehold.co/1000x1000/D9D9D9/15acbe?text=ILLUSTRATION+PROJECT+TWENTY+THREE+FULL" data-title="Project Twenty Three: Charcoal Sketch">
+                    <div class="project-overlay"><h2>Charcoal Sketch</h2></div>
+                </div>
+                <div class="relative overflow-hidden rounded-xl shadow-lg art-placeholder img-24 h-72" data-index="23" data-src="https://placehold.co/1000x1000/E0E0E0/15acbe?text=ILLUSTRATION+PROJECT+TWENTY+FOUR+FULL" data-title="Project Twenty Four: Mixed Media">
+                     <div class="project-overlay"><h2>Mixed Media</h2></div>
+                </div>
+                
+            </div>
+        </section>
 
-            <!-- Item 1: Square (h-72) -->
-            <div class="relative overflow-hidden rounded-xl shadow-lg art-placeholder img-1 h-72" data-index="0" data-src="https://placehold.co/1000x1000/F5F5F5/15acbe?text=Project+One+Full" data-title="Project One Title">
-                <div class="project-overlay">
-                    <h2>Project One Title</h2>
-                </div>
-            </div>
+        <!-- 
+        ===================================================================
+        SECTION 2: GRAPHIC DESIGN GALLERY (22 Projects)
+        ===================================================================
+        -->
+        <section id="design-section" class="content-section">
+            <h2 class="text-3xl font-extrabold text-gray-900 mb-8 text-center">Graphic Design Work</h2>
+            <div id="design-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
-            <!-- Item 2: Square (h-72) -->
-            <div class="relative overflow-hidden rounded-xl shadow-lg art-placeholder img-2 h-72" data-index="1" data-src="https://placehold.co/1000x1000/E0E0E0/15acbe?text=Project+Two+Full" data-title="Project Two Title">
-                 <div class="project-overlay">
-                    <h2>Project Two Title</h2>
+                <!-- DESIGN ITEMS (24 to 45) -->
+                <div class="relative overflow-hidden rounded-xl shadow-lg art-placeholder img-25 h-72" data-index="24" data-src="https://placehold.co/1000x1000/FFC0CB/15acbe?text=DESIGN+LOGO+1+FULL" data-title="Design 1: Modern Logo Set">
+                    <div class="project-overlay"><h2>Modern Logo Set</h2></div>
                 </div>
-            </div>
-
-            <!-- Item 3: Square (h-72) -->
-            <div class="relative overflow-hidden rounded-xl shadow-lg art-placeholder img-3 h-72" data-index="2" data-src="https://placehold.co/1000x1000/F0F0F0/15acbe?text=Project+Three+Full" data-title="Project Three Title">
-                 <div class="project-overlay">
-                    <h2>Project Three Title</h2>
+                <div class="relative overflow-hidden rounded-xl shadow-lg art-placeholder img-26 h-72" data-index="25" data-src="https://placehold.co/1000x1000/ADD8E6/15acbe?text=DESIGN+BRANDING+2+FULL" data-title="Design 2: Corporate Brand Identity">
+                    <div class="project-overlay"><h2>Corporate Brand Identity</h2></div>
                 </div>
-            </div>
-
-            <!-- Item 4: Square (h-72) -->
-            <div class="relative overflow-hidden rounded-xl shadow-lg art-placeholder img-4 h-72" data-index="3" data-src="https://placehold.co/1000x1000/D9D9D9/15acbe?text=Project+Four+Full" data-title="Project Four Title">
-                <div class="project-overlay">
-                    <h2>Project Four Title</h2>
+                <div class="relative overflow-hidden rounded-xl shadow-lg art-placeholder img-27 h-72" data-index="26" data-src="https://placehold.co/1000x1000/90EE90/15acbe?text=DESIGN+POSTER+3+FULL" data-title="Design 3: Event Poster Series">
+                    <div class="project-overlay"><h2>Event Poster Series</h2></div>
                 </div>
-            </div>
-
-            <!-- Item 5: Square (h-72) -->
-            <div class="relative overflow-hidden rounded-xl shadow-lg art-placeholder img-5 h-72" data-index="4" data-src="https://placehold.co/1000x1000/E8E8E8/15acbe?text=Project+Five+Full" data-title="Project Five Title">
-                 <div class="project-overlay">
-                    <h2>Project Five Title</h2>
+                <div class="relative overflow-hidden rounded-xl shadow-lg art-placeholder img-28 h-72" data-index="27" data-src="https://placehold.co/1000x1000/FFA07A/15acbe?text=DESIGN+UI/UX+4+FULL" data-title="Design 4: Mobile App UI/UX">
+                    <div class="project-overlay"><h2>Mobile App UI/UX</h2></div>
                 </div>
-            </div>
-
-            <!-- Item 6: Square (h-72) -->
-            <div class="relative overflow-hidden rounded-xl shadow-lg art-placeholder img-6 h-72" data-index="5" data-src="https://placehold.co/1000x1000/F0F0F0/15acbe?text=Project+Six+Full" data-title="Project Six Title">
-                 <div class="project-overlay">
-                    <h2>Project Six Title</h2>
+                <div class="relative overflow-hidden rounded-xl shadow-lg art-placeholder img-29 h-72" data-index="28" data-src="https://placehold.co/1000x1000/BA55D3/15acbe?text=DESIGN+PACKAGING+5+FULL" data-title="Design 5: Product Packaging">
+                    <div class="project-overlay"><h2>Product Packaging</h2></div>
                 </div>
-            </div>
-
-            <!-- Item 7: Square (h-72) -->
-            <div class="relative overflow-hidden rounded-xl shadow-lg art-placeholder img-7 h-72" data-index="6" data-src="https://placehold.co/1000x1000/F5F5F5/15acbe?text=Project+Seven+Full" data-title="Project Seven Title">
-                 <div class="project-overlay">
-                    <h2>Project Seven Title</h2>
+                <div class="relative overflow-hidden rounded-xl shadow-lg art-placeholder img-30 h-72" data-index="29" data-src="https://placehold.co/1000x1000/87CEFA/15acbe?text=DESIGN+WEB+6+FULL" data-title="Design 6: E-commerce Website Mockup">
+                    <div class="project-overlay"><h2>E-commerce Website Mockup</h2></div>
                 </div>
-            </div>
-
-            <!-- Item 8: Square (h-72) -->
-            <div class="relative overflow-hidden rounded-xl shadow-lg art-placeholder img-8 h-72" data-index="7" data-src="https://placehold.co/1000x1000/E0E0E0/15acbe?text=Project+Eight+Full" data-title="Project Eight Title">
-                 <div class="project-overlay">
-                    <h2>Project Eight Title</h2>
+                <div class="relative overflow-hidden rounded-xl shadow-lg art-placeholder img-31 h-72" data-index="30" data-src="https://placehold.co/1000x1000/F08080/15acbe?text=DESIGN+BOOK+7+FULL" data-title="Design 7: Book Layout & Typography">
+                    <div class="project-overlay"><h2>Book Layout & Typography</h2></div>
                 </div>
-            </div>
-
-            <!-- Item 9: Square (h-72) -->
-            <div class="relative overflow-hidden rounded-xl shadow-lg art-placeholder img-9 h-72" data-index="8" data-src="https://placehold.co/1000x1000/F0F0F0/15acbe?text=Project+Nine+Full" data-title="Project Nine Title">
-                <div class="project-overlay">
-                    <h2>Project Nine Title</h2>
+                <div class="relative overflow-hidden rounded-xl shadow-lg art-placeholder img-32 h-72" data-index="31" data-src="https://placehold.co/1000x1000/20B2AA/15acbe?text=DESIGN+EDITORIAL+8+FULL" data-title="Design 8: Magazine Spread">
+                    <div class="project-overlay"><h2>Magazine Spread</h2></div>
                 </div>
-            </div>
-
-            <!-- Item 10: Square (h-72) -->
-            <div class="relative overflow-hidden rounded-xl shadow-lg art-placeholder img-10 h-72" data-index="9" data-src="https://placehold.co/1000x1000/D9D9D9/15acbe?text=Project+Ten+Full" data-title="Project Ten Title">
-                 <div class="project-overlay">
-                    <h2>Project Ten Title</h2>
+                <div class="relative overflow-hidden rounded-xl shadow-lg art-placeholder img-33 h-72" data-index="32" data-src="https://placehold.co/1000x1000/DDA0DD/15acbe?text=DESIGN+INFOGRAPHIC+9+FULL" data-title="Design 9: Data Visualization">
+                    <div class="project-overlay"><h2>Data Visualization</h2></div>
                 </div>
-            </div>
-
-            <!-- Item 11: Square (h-72) -->
-            <div class="relative overflow-hidden rounded-xl shadow-lg art-placeholder img-11 h-72" data-index="10" data-src="https://placehold.co/1000x1000/E8E8E8/15acbe?text=Project+Eleven+Full" data-title="Project Eleven Title">
-                 <div class="project-overlay">
-                    <h2>Project Eleven Title</h2>
+                <div class="relative overflow-hidden rounded-xl shadow-lg art-placeholder img-34 h-72" data-index="33" data-src="https://placehold.co/1000x1000/FFD700/15acbe?text=DESIGN+ICON+10+FULL" data-title="Design 10: App Icon Set">
+                    <div class="project-overlay"><h2>App Icon Set</h2></div>
                 </div>
-            </div>
-
-            <!-- Item 12: Square (h-72) -->
-            <div class="relative overflow-hidden rounded-xl shadow-lg art-placeholder img-12 h-72" data-index="11" data-src="https://placehold.co/1000x1000/F5F5F5/15acbe?text=Project+Twelve+Full" data-title="Project Twelve Title">
-                 <div class="project-overlay">
-                    <h2>Project Twelve Title</h2>
+                <div class="relative overflow-hidden rounded-xl shadow-lg art-placeholder img-35 h-72" data-index="34" data-src="https://placehold.co/1000x1000/8A2BE2/15acbe?text=DESIGN+MOTION+11+FULL" data-title="Design 11: Simple Motion Graphics">
+                    <div class="project-overlay"><h2>Simple Motion Graphics</h2></div>
                 </div>
-            </div>
-
-            <!-- Item 13: Square (h-72) -->
-            <div class="relative overflow-hidden rounded-xl shadow-lg art-placeholder img-13 h-72" data-index="12" data-src="https://placehold.co/1000x1000/E0E0E0/15acbe?text=Project+Thirteen+Full" data-title="Project Thirteen Title">
-                <div class="project-overlay">
-                    <h2>Project Thirteen Title</h2>
+                <div class="relative overflow-hidden rounded-xl shadow-lg art-placeholder img-36 h-72" data-index="35" data-src="https://placehold.co/1000x1000/6A5ACD/15acbe?text=DESIGN+3D+12+FULL" data-title="Design 12: 3D Rendering">
+                    <div class="project-overlay"><h2>3D Rendering</h2></div>
                 </div>
-            </div>
-
-            <!-- Item 14: Square (h-72) -->
-            <div class="relative overflow-hidden rounded-xl shadow-lg art-placeholder img-14 h-72" data-index="13" data-src="https://placehold.co/1000x1000/F0F0F0/15acbe?text=Project+Fourteen+Full" data-title="Project Fourteen Title">
-                 <div class="project-overlay">
-                    <h2>Project Fourteen Title</h2>
+                <!-- 10 NEW DESIGN ITEMS BELOW (13-22) -->
+                <div class="relative overflow-hidden rounded-xl shadow-lg art-placeholder img-37 h-72" data-index="36" data-src="https://placehold.co/1000x1000/98FF98/15acbe?text=DESIGN+AD+13+FULL" data-title="Design 13: Social Media Ad Campaign">
+                    <div class="project-overlay"><h2>Ad Campaign Design</h2></div>
                 </div>
-            </div>
-
-            <!-- Item 15: Square (h-72) -->
-            <div class="relative overflow-hidden rounded-xl shadow-lg art-placeholder img-15 h-72" data-index="14" data-src="https://placehold.co/1000x1000/D9D9D9/15acbe?text=Project+Fifteen+Full" data-title="Project Fifteen Title">
-                 <div class="project-overlay">
-                    <h2>Project Fifteen Title</h2>
+                <div class="relative overflow-hidden rounded-xl shadow-lg art-placeholder img-38 h-72" data-index="37" data-src="https://placehold.co/1000x1000/B0E0E6/15acbe?text=DESIGN+FLYER+14+FULL" data-title="Design 14: Corporate Flyer Template">
+                    <div class="project-overlay"><h2>Corporate Flyer Template</h2></div>
                 </div>
-            </div>
-
-            <!-- Item 16: Square (h-72) -->
-            <div class="relative overflow-hidden rounded-xl shadow-lg art-placeholder img-16 h-72" data-index="15" data-src="https://placehold.co/1000x1000/E8E8E8/15acbe?text=Project+Sixteen+Full" data-title="Project Sixteen Title">
-                 <div class="project-overlay">
-                    <h2>Project Sixteen Title</h2>
+                <div class="relative overflow-hidden rounded-xl shadow-lg art-placeholder img-39 h-72" data-index="38" data-src="https://placehold.co/1000x1000/FFB6C1/15acbe?text=DESIGN+SOCIAL+15+FULL" data-title="Design 15: Instagram Carousel Design">
+                    <div class="project-overlay"><h2>Instagram Carousel Design</h2></div>
                 </div>
-            </div>
-
-            <!-- Item 17: Square (h-72) -->
-            <div class="relative overflow-hidden rounded-xl shadow-lg art-placeholder img-17 h-72" data-index="16" data-src="https://placehold.co/1000x1000/F5F5F5/15acbe?text=Project+Seventeen+Full" data-title="Project Seventeen Title">
-                 <div class="project-overlay">
-                    <h2>Project Seventeen Title</h2>
+                <div class="relative overflow-hidden rounded-xl shadow-lg art-placeholder img-40 h-72" data-index="39" data-src="https://placehold.co/1000x1000/9370DB/15acbe?text=DESIGN+VECTOR+16+FULL" data-title="Design 16: Abstract Vector Artwork">
+                    <div class="project-overlay"><h2>Abstract Vector Artwork</h2></div>
                 </div>
-            </div>
-
-            <!-- Item 18: Square (h-72) -->
-            <div class="relative overflow-hidden rounded-xl shadow-lg art-placeholder img-18 h-72" data-index="17" data-src="https://placehold.co/1000x1000/E0E0E0/15acbe?text=Project+Eighteen+Full" data-title="Project Eighteen Title">
-                <div class="project-overlay">
-                    <h2>Project Eighteen Title</h2>
+                <div class="relative overflow-hidden rounded-xl shadow-lg art-placeholder img-41 h-72" data-index="40" data-src="https://placehold.co/1000x1000/7FFFD4/15acbe?text=DESIGN+CORPORATE+17+FULL" data-title="Design 17: Annual Report Layout">
+                    <div class="project-overlay"><h2>Annual Report Layout</h2></div>
                 </div>
-            </div>
-
-            <!-- Item 19: Square (h-72) -->
-            <div class="relative overflow-hidden rounded-xl shadow-lg art-placeholder img-19 h-72" data-index="18" data-src="https://placehold.co/1000x1000/F0F0F0/15acbe?text=Project+Nineteen+Full" data-title="Project Nineteen Title">
-                 <div class="project-overlay">
-                    <h2>Project Nineteen Title</h2>
+                <div class="relative overflow-hidden rounded-xl shadow-lg art-placeholder img-42 h-72" data-index="41" data-src="https://placehold.co/1000x1000/D8BFD8/15acbe?text=DESIGN+TYPO+18+FULL" data-title="Design 18: Experimental Typography">
+                    <div class="project-overlay"><h2>Experimental Typography</h2></div>
                 </div>
-            </div>
-
-            <!-- Item 20: Square (h-72) -->
-            <div class="relative overflow-hidden rounded-xl shadow-lg art-placeholder img-20 h-72" data-index="19" data-src="https://placehold.co/1000x1000/D9D9D9/15acbe?text=Project+Twenty+Full" data-title="Project Twenty Title">
-                 <div class="project-overlay">
-                    <h2>Project Twenty Title</h2>
+                <div class="relative overflow-hidden rounded-xl shadow-lg art-placeholder img-43 h-72" data-index="42" data-src="https://placehold.co/1000x1000/F0E68C/15acbe?text=DESIGN+EVENT+19+FULL" data-title="Design 19: Event Program Design">
+                    <div class="project-overlay"><h2>Event Program Design</h2></div>
                 </div>
-            </div>
-            
-            <!-- Item 21: Square (h-72) -->
-            <div class="relative overflow-hidden rounded-xl shadow-lg art-placeholder img-21 h-72" data-index="20" data-src="https://placehold.co/1000x1000/E8E8E8/15acbe?text=Project+Twenty+One+Full" data-title="Project Twenty One">
-                 <div class="project-overlay">
-                    <h2>Project Twenty One</h2>
+                <div class="relative overflow-hidden rounded-xl shadow-lg art-placeholder img-44 h-72" data-index="43" data-src="https://placehold.co/1000x1000/40E0D0/15acbe?text=DESIGN+ALBUM+20+FULL" data-title="Design 20: Music Album Artwork">
+                    <div class="project-overlay"><h2>Music Album Artwork</h2></div>
                 </div>
-            </div>
-
-            <!-- Item 22: Square (h-72) -->
-            <div class="relative overflow-hidden rounded-xl shadow-lg art-placeholder img-22 h-72" data-index="21" data-src="https://placehold.co/1000x1000/F5F5F5/15acbe?text=Project+Twenty+Two+Full" data-title="Project Twenty Two">
-                 <div class="project-overlay">
-                    <h2>Project Twenty Two</h2>
+                <div class="relative overflow-hidden rounded-xl shadow-lg art-placeholder img-45 h-72" data-index="44" data-src="https://placehold.co/1000x1000/BDB76B/15acbe?text=DESIGN+PRINT+21+FULL" data-title="Design 21: Newsletter Print Design">
+                    <div class="project-overlay"><h2>Newsletter Print Design</h2></div>
                 </div>
-            </div>
-
-            <!-- Item 23: NEW PROJECT - Square (h-72) -->
-            <div class="relative overflow-hidden rounded-xl shadow-lg art-placeholder img-23 h-72" data-index="22" data-src="https://placehold.co/1000x1000/D9D9D9/15acbe?text=Project+Twenty+Three+Full" data-title="Project Twenty Three">
-                <div class="project-overlay">
-                    <h2>Project Twenty Three</h2>
+                <div class="relative overflow-hidden rounded-xl shadow-lg art-placeholder img-46 h-72" data-index="45" data-src="https://placehold.co/1000x1000/FFA500/15acbe?text=DESIGN+CONCEPT+22+FULL" data-title="Design 22: Generative Art Concept">
+                    <div class="project-overlay"><h2>Generative Art Concept</h2></div>
                 </div>
+                
             </div>
-
-            <!-- Item 24: NEW PROJECT - Square (h-72) -->
-            <div class="relative overflow-hidden rounded-xl shadow-lg art-placeholder img-24 h-72" data-index="23" data-src="https://placehold.co/1000x1000/E0E0E0/15acbe?text=Project+Twenty+Four+Full" data-title="Project Twenty Four">
-                 <div class="project-overlay">
-                    <h2>Project Twenty Four</h2>
-                </div>
-            </div>
-            
         </section>
     </main>
 
-    <!-- Contact & Footer Section -->
+    <!-- Contact & Footer Section (Remains visible regardless of tab) -->
     <footer class="bg-gray-50 border-t border-gray-200 mt-16 py-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
             
@@ -382,19 +398,15 @@
                 <p class="text-gray-600 mb-6">Ready to start a new project or just want to say hello? Send me a message.</p>
                 
                 <form action="#" method="POST" class="space-y-4">
-                    <!-- Name Input: Focus rings changed to #15acbe -->
                     <div>
                         <input type="text" placeholder="Your Name" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-[#15acbe] focus:border-[#15acbe] transition duration-150" required>
                     </div>
-                    <!-- Email Input: Focus rings changed to #15acbe -->
                     <div>
                         <input type="email" placeholder="Your Email" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-[#15acbe] focus:border-[#15acbe] transition duration-150" required>
                     </div>
-                    <!-- Message Textarea: Focus rings changed to #15acbe -->
                     <div>
                         <textarea placeholder="Your Message" rows="4" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-[#15acbe] focus:border-[#15acbe] transition duration-150" required></textarea>
                     </div>
-                    <!-- Submit Button: BG changed to #15acbe, Hover BG changed to #161e33 -->
                     <div>
                         <button type="submit" class="w-full bg-[#15acbe] text-white font-semibold py-3 rounded-lg hover:bg-[#161e33] transition duration-150 shadow-md">
                             Send Message
@@ -408,29 +420,22 @@
                 <h4 class="text-xl font-semibold text-gray-700 mb-4">Find Me Here</h4>
                 <div class="space-y-3 text-gray-600">
                     <p class="flex items-center">
-                        <!-- EDITED: Icon color changed to #15acbe -->
                         <i data-lucide="mail" class="w-5 h-5 mr-3 text-[#15acbe]"></i>
-                        <!-- EDIT HERE: Change your contact email -->
                         hello@yourname.com
                     </p>
                     <p class="flex items-center">
-                        <!-- EDITED: Icon color changed to #15acbe -->
                         <i data-lucide="map-pin" class="w-5 h-5 mr-3 text-[#15acbe]"></i>
                         Your Location (e.g., Remote or City, State)
                     </p>
                     <p class="pt-4">
                         <span class="font-semibold text-gray-800">Follow My Work:</span>
                         <div class="flex mt-2 space-x-4">
-                            <!-- Social icons repeated here for visibility in the footer -->
-                            <!-- Instagram: Hover color changed to new blue -->
                             <a href="#" class="text-gray-500 hover:text-[#15acbe] transition duration-150">
                                 <i data-lucide="instagram" class="w-6 h-6"></i>
                             </a>
-                            <!-- LinkedIn: Hover color changed to new blue -->
                             <a href="#" class="text-gray-500 hover:text-[#15acbe] transition duration-150">
                                 <i data-lucide="linkedin" class="w-6 h-6"></i>
                             </a>
-                            <!-- Behance: Primary color set to #15acbe, hover uses custom CSS class -->
                             <a href="#" class="text-[#15acbe] behance-brand-hover transition duration-150">
                                 <i data-lucide="behance" class="w-6 h-6"></i>
                             </a>
@@ -439,7 +444,6 @@
                 </div>
                 
                 <div class="mt-10 pt-6 border-t border-gray-200 text-sm text-gray-400">
-                    <!-- EDIT HERE: Update Copyright Year and Name -->
                     &copy; 2023 Your Name. All rights reserved.
                 </div>
             </div>
@@ -484,15 +488,16 @@
 
 
     <!-- ========================================================= -->
-    <!-- JAVASCRIPT FOR LIGHTBOX FUNCTIONALITY -->
+    <!-- JAVASCRIPT FOR LIGHTBOX & TAB FUNCTIONALITY -->
     <!-- ========================================================= -->
     <script>
         lucide.createIcons();
 
-        // 1. Setup Project Data (Mirrors the data-* attributes in the HTML)
+        // --- 1. SETUP PROJECT DATA (GATHER ALL 46 PROJECTS) ---
         const projects = [];
         const projectElements = document.querySelectorAll('.art-placeholder');
         
+        // Populate the master projects array with data from ALL sections
         projectElements.forEach(element => {
             projects.push({
                 src: element.getAttribute('data-src'),
@@ -501,8 +506,9 @@
         });
 
         let currentProjectIndex = -1;
+        const totalProjects = projects.length;
 
-        // 2. Get DOM elements
+        // --- 2. LIGHTBOX DOM ELEMENTS & HANDLERS ---
         const modal = document.getElementById('lightbox-modal');
         const modalImage = document.getElementById('lightbox-image');
         const modalTitle = document.getElementById('lightbox-title');
@@ -511,23 +517,23 @@
         const prevButton = document.getElementById('lightbox-prev');
         const nextButton = document.getElementById('lightbox-next');
 
-        // 3. Core Function to Display Image
         function showImage(index) {
+            // Logic for wrapping around the project list
             if (index < 0) {
-                index = projects.length - 1; // Wrap around to last image
-            } else if (index >= projects.length) {
+                index = totalProjects - 1; // Wrap around to last image
+            } else if (index >= totalProjects) {
                 index = 0; // Wrap around to first image
             }
 
             currentProjectIndex = index;
             const project = projects[currentProjectIndex];
 
+            // Update modal content
             modalImage.src = project.src;
             modalTitle.textContent = project.title;
-            modalCounter.textContent = `${currentProjectIndex + 1} of ${projects.length}`;
+            modalCounter.textContent = `${currentProjectIndex + 1} of ${totalProjects}`;
         }
 
-        // 4. Event Handlers
         function openModal(index) {
             showImage(index);
             modal.classList.add('active');
@@ -546,11 +552,63 @@
             }
         }
 
-        // 5. Attach Listeners
+        // --- 3. SECTION SWITCHING LOGIC ---
+        const navLinks = document.querySelectorAll('#main-nav a[data-section]');
+        const sections = document.querySelectorAll('.content-section');
+
+        function showSection(sectionId) {
+            // 1. Hide all sections and deactivate all links
+            sections.forEach(section => section.classList.remove('active'));
+            navLinks.forEach(link => link.classList.remove('active'));
+
+            // 2. Show the requested section
+            const activeSection = document.getElementById(sectionId + '-section');
+            if (activeSection) {
+                activeSection.classList.add('active');
+            }
+
+            // 3. Activate the corresponding nav link
+            const activeLink = document.querySelector(`a[data-section="${sectionId}"]`);
+            if (activeLink) {
+                activeLink.classList.add('active');
+            }
+        }
+
+        // Handle navigation clicks
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                const sectionId = link.getAttribute('data-section');
+                
+                // Only prevent default for gallery sections to use hash-based routing
+                if (sectionId === 'illustration' || sectionId === 'design') {
+                    e.preventDefault();
+                    // Manually update hash and switch section
+                    window.location.hash = '#' + sectionId; 
+                }
+                // 'about' and 'contact' links will use their default behavior, 
+                // but we should ensure the section visibility is correct.
+            });
+        });
+
+        // Handle URL hash change (for initial load and back/forward navigation)
+        function handleHashChange() {
+            let sectionId = window.location.hash.substring(1);
+            if (!sectionId || sectionId === 'about' || sectionId === 'contact') {
+                // Default to illustration if no hash or if it's a non-gallery link
+                sectionId = 'illustration';
+            }
+            showSection(sectionId);
+            // Scroll to top of the content area after switching
+            window.scrollTo({ top: document.querySelector('main').offsetTop - 80, behavior: 'smooth' });
+        }
+
+
+        // --- 4. ATTACH ALL LISTENERS & INITIALIZE ---
 
         // Open modal when a project is clicked
         projectElements.forEach(element => {
             element.addEventListener('click', () => {
+                // Parse the index from data-index attribute
                 const index = parseInt(element.getAttribute('data-index'));
                 openModal(index);
             });
@@ -563,7 +621,7 @@
         prevButton.addEventListener('click', () => navigate(-1));
         nextButton.addEventListener('click', () => navigate(1));
 
-        // Close on escape key press
+        // Keyboard navigation (Escape, ArrowLeft, ArrowRight)
         document.addEventListener('keydown', (e) => {
             if (modal.classList.contains('active')) {
                 if (e.key === 'Escape') {
@@ -578,11 +636,19 @@
 
         // Close when clicking outside the image (on the modal backdrop)
         modal.addEventListener('click', (e) => {
-            // Check if the click target is the modal itself (not a child element)
             if (e.target.id === 'lightbox-modal') {
                 closeLightbox();
             }
         });
+
+        // Initialize section based on URL hash or default
+        window.addEventListener('load', handleHashChange);
+        window.addEventListener('hashchange', handleHashChange);
+        
+        // Set the default hash if none is present on load
+        if (window.location.hash === '') {
+            window.location.hash = '#illustration';
+        }
     </script>
 </body>
 </html>
