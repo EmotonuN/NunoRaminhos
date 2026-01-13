@@ -9,7 +9,6 @@
     <!-- Load Lucide icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
-        /* Custom Font Configuration */
         @import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Inter:wght@400;600;700&display=swap');
         
         .logo-font {
@@ -22,33 +21,42 @@
             background-color: #fcfcfc;
         }
 
-        .art-placeholder {
-            background-size: cover;
-            background-position: center;
-            transition: transform 0.3s ease-in-out;
+        /* Hover effects for the image containers */
+        .art-card {
+            position: relative;
+            overflow: hidden;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
             cursor: pointer;
-            background-color: #f0f0f0; /* Fallback color */
+            height: 18rem; /* Equivalent to h-72 */
+            background-color: #f3f4f6;
         }
 
-        .art-placeholder:hover {
-            transform: scale(1.02);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        .art-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .art-card:hover img {
+            transform: scale(1.1);
         }
 
         .project-overlay {
             position: absolute;
-            bottom: 0; left: 0; right: 0;
-            padding: 1rem;
-            background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 100%);
+            inset: 0;
+            display: flex;
+            align-items: flex-end;
+            padding: 1.5rem;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 60%);
             color: white;
             opacity: 0;
-            transform: translateY(100%);
-            transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+            transition: opacity 0.3s ease;
         }
         
-        .art-placeholder:hover .project-overlay {
+        .art-card:hover .project-overlay {
             opacity: 1;
-            transform: translateY(0);
         }
 
         .lightbox-modal {
@@ -78,62 +86,6 @@
             display: block;
             opacity: 1;
         }
-
-        /* THUMBNAIL CSS GENERATION 
-           Update these paths to match your GitHub 'images' folder 
-        */
-        
-        /* Illustrations 1-24 */
-        .img-illus-1 { background-image: url('imagens/WOOF.png'); }
-        .img-illus-2 { background-image: url('images/illus-2.jpg'); }
-        .img-illus-3 { background-image: url('images/illus-3.jpg'); }
-        .img-illus-4 { background-image: url('images/illus-4.jpg'); }
-        .img-illus-5 { background-image: url('images/illus-5.jpg'); }
-        .img-illus-6 { background-image: url('images/illus-6.jpg'); }
-        .img-illus-7 { background-image: url('images/illus-7.jpg'); }
-        .img-illus-8 { background-image: url('images/illus-8.jpg'); }
-        .img-illus-9 { background-image: url('images/illus-9.jpg'); }
-        .img-illus-10 { background-image: url('images/illus-10.jpg'); }
-        .img-illus-11 { background-image: url('images/illus-11.jpg'); }
-        .img-illus-12 { background-image: url('images/illus-12.jpg'); }
-        .img-illus-13 { background-image: url('images/illus-13.jpg'); }
-        .img-illus-14 { background-image: url('images/illus-14.jpg'); }
-        .img-illus-15 { background-image: url('images/illus-15.jpg'); }
-        .img-illus-16 { background-image: url('images/illus-16.jpg'); }
-        .img-illus-17 { background-image: url('images/illus-17.jpg'); }
-        .img-illus-18 { background-image: url('images/illus-18.jpg'); }
-        .img-illus-19 { background-image: url('images/illus-19.jpg'); }
-        .img-illus-20 { background-image: url('images/illus-20.jpg'); }
-        .img-illus-21 { background-image: url('images/illus-21.jpg'); }
-        .img-illus-22 { background-image: url('images/illus-22.jpg'); }
-        .img-illus-23 { background-image: url('images/illus-23.jpg'); }
-        .img-illus-24 { background-image: url('images/illus-24.jpg'); }
-
-        /* Design 1-24 */
-        .img-design-1 { background-image: url('images/design-1.jpg'); }
-        .img-design-2 { background-image: url('images/design-2.jpg'); }
-        .img-design-3 { background-image: url('images/design-3.jpg'); }
-        .img-design-4 { background-image: url('images/design-4.jpg'); }
-        .img-design-5 { background-image: url('images/design-5.jpg'); }
-        .img-design-6 { background-image: url('images/design-6.jpg'); }
-        .img-design-7 { background-image: url('images/design-7.jpg'); }
-        .img-design-8 { background-image: url('images/design-8.jpg'); }
-        .img-design-9 { background-image: url('images/design-9.jpg'); }
-        .img-design-10 { background-image: url('images/design-10.jpg'); }
-        .img-design-11 { background-image: url('images/design-11.jpg'); }
-        .img-design-12 { background-image: url('images/design-12.jpg'); }
-        .img-design-13 { background-image: url('images/design-13.jpg'); }
-        .img-design-14 { background-image: url('images/design-14.jpg'); }
-        .img-design-15 { background-image: url('images/design-15.jpg'); }
-        .img-design-16 { background-image: url('images/design-16.jpg'); }
-        .img-design-17 { background-image: url('images/design-17.jpg'); }
-        .img-design-18 { background-image: url('images/design-18.jpg'); }
-        .img-design-19 { background-image: url('images/design-19.jpg'); }
-        .img-design-20 { background-image: url('images/design-20.jpg'); }
-        .img-design-21 { background-image: url('images/design-21.jpg'); }
-        .img-design-22 { background-image: url('images/design-22.jpg'); }
-        .img-design-23 { background-image: url('images/design-23.jpg'); }
-        .img-design-24 { background-image: url('images/design-24.jpg'); }
     </style>
 </head>
 <body class="pt-24 lg:pt-32">
@@ -145,7 +97,7 @@
                 <div class="text-xs font-medium tracking-widest text-gray-500 uppercase mt-0.5">ART DIRECTOR | ILLUSTRATOR</div>
             </div>
 
-            <nav class="flex flex-col lg:flex-row items-center space-y-2 lg:space-y-0 lg:space-x-6" id="main-nav">
+            <nav class="flex flex-col lg:flex-row items-center space-y-2 lg:space-y-0 lg:space-x-6">
                 <div class="flex flex-wrap justify-center gap-x-4">
                     <a data-section="illustration" class="nav-link active">Illustration</a>
                     <a data-section="design" class="nav-link">Graphic Design</a>
@@ -160,42 +112,67 @@
         <!-- SECTION 1: ILLUSTRATION (24 Items) -->
         <section id="illustration-section" class="content-section active">
             <h2 class="text-2xl font-bold mb-8 text-gray-800 border-l-4 border-[#15acbe] pl-4 uppercase tracking-tighter">Illustration Portfolio</h2>
-            <div id="illus-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                <!-- JS will handle injection or we can hardcode for reliability. Hardcoding first 24 for you. -->
-                <!-- Repeat this block 24 times -->
-                <script>
-                    const illusGrid = document.getElementById('illus-grid');
-                    for (let i = 1; i <= 24; i++) {
-                        document.write(`
-                            <div class="relative overflow-hidden rounded-xl shadow-lg art-placeholder img-illus-${i} h-64" 
-                                 data-index="${i-1}" 
-                                 data-src="imagens/WOOF.png" 
-                                 data-title="Illustration Project ${i}">
-                                <div class="project-overlay"><h2>Project ${i}</h2></div>
-                            </div>
-                        `);
-                    }
-                </script>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                
+                <!-- Repeat this block for each image. Change path and title as needed. -->
+                <div class="art-card" onclick="openLightbox('imagens/WOOF.png', 'Project 1')"><img src="imagens/WOOF.png" alt="1" onerror="this.src='https://via.placeholder.com/400x400?text=Illus+1'"><div class="project-overlay"><h3 class="font-bold">Project 1</h3></div></div>
+                <div class="art-card" onclick="openLightbox('images/illus-2.jpg', 'Project 2')"><img src="images/illus-2.jpg" alt="2" onerror="this.src='https://via.placeholder.com/400x400?text=Illus+2'"><div class="project-overlay"><h3 class="font-bold">Project 2</h3></div></div>
+                <div class="art-card" onclick="openLightbox('images/illus-3.jpg', 'Project 3')"><img src="images/illus-3.jpg" alt="3" onerror="this.src='https://via.placeholder.com/400x400?text=Illus+3'"><div class="project-overlay"><h3 class="font-bold">Project 3</h3></div></div>
+                <div class="art-card" onclick="openLightbox('images/illus-4.jpg', 'Project 4')"><img src="images/illus-4.jpg" alt="4" onerror="this.src='https://via.placeholder.com/400x400?text=Illus+4'"><div class="project-overlay"><h3 class="font-bold">Project 4</h3></div></div>
+                <div class="art-card" onclick="openLightbox('images/illus-5.jpg', 'Project 5')"><img src="images/illus-5.jpg" alt="5" onerror="this.src='https://via.placeholder.com/400x400?text=Illus+5'"><div class="project-overlay"><h3 class="font-bold">Project 5</h3></div></div>
+                <div class="art-card" onclick="openLightbox('images/illus-6.jpg', 'Project 6')"><img src="images/illus-6.jpg" alt="6" onerror="this.src='https://via.placeholder.com/400x400?text=Illus+6'"><div class="project-overlay"><h3 class="font-bold">Project 6</h3></div></div>
+                <div class="art-card" onclick="openLightbox('images/illus-7.jpg', 'Project 7')"><img src="images/illus-7.jpg" alt="7" onerror="this.src='https://via.placeholder.com/400x400?text=Illus+7'"><div class="project-overlay"><h3 class="font-bold">Project 7</h3></div></div>
+                <div class="art-card" onclick="openLightbox('images/illus-8.jpg', 'Project 8')"><img src="images/illus-8.jpg" alt="8" onerror="this.src='https://via.placeholder.com/400x400?text=Illus+8'"><div class="project-overlay"><h3 class="font-bold">Project 8</h3></div></div>
+                <div class="art-card" onclick="openLightbox('images/illus-9.jpg', 'Project 9')"><img src="images/illus-9.jpg" alt="9" onerror="this.src='https://via.placeholder.com/400x400?text=Illus+9'"><div class="project-overlay"><h3 class="font-bold">Project 9</h3></div></div>
+                <div class="art-card" onclick="openLightbox('images/illus-10.jpg', 'Project 10')"><img src="images/illus-10.jpg" alt="10" onerror="this.src='https://via.placeholder.com/400x400?text=Illus+10'"><div class="project-overlay"><h3 class="font-bold">Project 10</h3></div></div>
+                <div class="art-card" onclick="openLightbox('images/illus-11.jpg', 'Project 11')"><img src="images/illus-11.jpg" alt="11" onerror="this.src='https://via.placeholder.com/400x400?text=Illus+11'"><div class="project-overlay"><h3 class="font-bold">Project 11</h3></div></div>
+                <div class="art-card" onclick="openLightbox('images/illus-12.jpg', 'Project 12')"><img src="images/illus-12.jpg" alt="12" onerror="this.src='https://via.placeholder.com/400x400?text=Illus+12'"><div class="project-overlay"><h3 class="font-bold">Project 12</h3></div></div>
+                <div class="art-card" onclick="openLightbox('images/illus-13.jpg', 'Project 13')"><img src="images/illus-13.jpg" alt="13" onerror="this.src='https://via.placeholder.com/400x400?text=Illus+13'"><div class="project-overlay"><h3 class="font-bold">Project 13</h3></div></div>
+                <div class="art-card" onclick="openLightbox('images/illus-14.jpg', 'Project 14')"><img src="images/illus-14.jpg" alt="14" onerror="this.src='https://via.placeholder.com/400x400?text=Illus+14'"><div class="project-overlay"><h3 class="font-bold">Project 14</h3></div></div>
+                <div class="art-card" onclick="openLightbox('images/illus-15.jpg', 'Project 15')"><img src="images/illus-15.jpg" alt="15" onerror="this.src='https://via.placeholder.com/400x400?text=Illus+15'"><div class="project-overlay"><h3 class="font-bold">Project 15</h3></div></div>
+                <div class="art-card" onclick="openLightbox('images/illus-16.jpg', 'Project 16')"><img src="images/illus-16.jpg" alt="16" onerror="this.src='https://via.placeholder.com/400x400?text=Illus+16'"><div class="project-overlay"><h3 class="font-bold">Project 16</h3></div></div>
+                <div class="art-card" onclick="openLightbox('images/illus-17.jpg', 'Project 17')"><img src="images/illus-17.jpg" alt="17" onerror="this.src='https://via.placeholder.com/400x400?text=Illus+17'"><div class="project-overlay"><h3 class="font-bold">Project 17</h3></div></div>
+                <div class="art-card" onclick="openLightbox('images/illus-18.jpg', 'Project 18')"><img src="images/illus-18.jpg" alt="18" onerror="this.src='https://via.placeholder.com/400x400?text=Illus+18'"><div class="project-overlay"><h3 class="font-bold">Project 18</h3></div></div>
+                <div class="art-card" onclick="openLightbox('images/illus-19.jpg', 'Project 19')"><img src="images/illus-19.jpg" alt="19" onerror="this.src='https://via.placeholder.com/400x400?text=Illus+19'"><div class="project-overlay"><h3 class="font-bold">Project 19</h3></div></div>
+                <div class="art-card" onclick="openLightbox('images/illus-20.jpg', 'Project 20')"><img src="images/illus-20.jpg" alt="20" onerror="this.src='https://via.placeholder.com/400x400?text=Illus+20'"><div class="project-overlay"><h3 class="font-bold">Project 20</h3></div></div>
+                <div class="art-card" onclick="openLightbox('images/illus-21.jpg', 'Project 21')"><img src="images/illus-21.jpg" alt="21" onerror="this.src='https://via.placeholder.com/400x400?text=Illus+21'"><div class="project-overlay"><h3 class="font-bold">Project 21</h3></div></div>
+                <div class="art-card" onclick="openLightbox('images/illus-22.jpg', 'Project 22')"><img src="images/illus-22.jpg" alt="22" onerror="this.src='https://via.placeholder.com/400x400?text=Illus+22'"><div class="project-overlay"><h3 class="font-bold">Project 22</h3></div></div>
+                <div class="art-card" onclick="openLightbox('images/illus-23.jpg', 'Project 23')"><img src="images/illus-23.jpg" alt="23" onerror="this.src='https://via.placeholder.com/400x400?text=Illus+23'"><div class="project-overlay"><h3 class="font-bold">Project 23</h3></div></div>
+                <div class="art-card" onclick="openLightbox('images/illus-24.jpg', 'Project 24')"><img src="images/illus-24.jpg" alt="24" onerror="this.src='https://via.placeholder.com/400x400?text=Illus+24'"><div class="project-overlay"><h3 class="font-bold">Project 24</h3></div></div>
+
             </div>
         </section>
 
         <!-- SECTION 2: DESIGN (24 Items) -->
         <section id="design-section" class="content-section">
             <h2 class="text-2xl font-bold mb-8 text-gray-800 border-l-4 border-[#15acbe] pl-4 uppercase tracking-tighter">Graphic Design Portfolio</h2>
-            <div id="design-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                <script>
-                    const designGrid = document.getElementById('design-grid');
-                    for (let i = 1; i <= 24; i++) {
-                        document.write(`
-                            <div class="relative overflow-hidden rounded-xl shadow-lg art-placeholder img-design-${i} h-64" 
-                                 data-index="${i + 23}" 
-                                 data-src="images/design-${i}.jpg" 
-                                 data-title="Design Project ${i}">
-                                <div class="project-overlay"><h2>Design ${i}</h2></div>
-                            </div>
-                        `);
-                    }
-                </script>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                
+                <div class="art-card" onclick="openLightbox('images/design-1.jpg', 'Design 1')"><img src="images/design-1.jpg" alt="D1" onerror="this.src='https://via.placeholder.com/400x400?text=Design+1'"><div class="project-overlay"><h3 class="font-bold">Design 1</h3></div></div>
+                <div class="art-card" onclick="openLightbox('images/design-2.jpg', 'Design 2')"><img src="images/design-2.jpg" alt="D2" onerror="this.src='https://via.placeholder.com/400x400?text=Design+2'"><div class="project-overlay"><h3 class="font-bold">Design 2</h3></div></div>
+                <div class="art-card" onclick="openLightbox('images/design-3.jpg', 'Design 3')"><img src="images/design-3.jpg" alt="D3" onerror="this.src='https://via.placeholder.com/400x400?text=Design+3'"><div class="project-overlay"><h3 class="font-bold">Design 3</h3></div></div>
+                <div class="art-card" onclick="openLightbox('images/design-4.jpg', 'Design 4')"><img src="images/design-4.jpg" alt="D4" onerror="this.src='https://via.placeholder.com/400x400?text=Design+4'"><div class="project-overlay"><h3 class="font-bold">Design 4</h3></div></div>
+                <div class="art-card" onclick="openLightbox('images/design-5.jpg', 'Design 5')"><img src="images/design-5.jpg" alt="D5" onerror="this.src='https://via.placeholder.com/400x400?text=Design+5'"><div class="project-overlay"><h3 class="font-bold">Design 5</h3></div></div>
+                <div class="art-card" onclick="openLightbox('images/design-6.jpg', 'Design 6')"><img src="images/design-6.jpg" alt="D6" onerror="this.src='https://via.placeholder.com/400x400?text=Design+6'"><div class="project-overlay"><h3 class="font-bold">Design 6</h3></div></div>
+                <div class="art-card" onclick="openLightbox('images/design-7.jpg', 'Design 7')"><img src="images/design-7.jpg" alt="D7" onerror="this.src='https://via.placeholder.com/400x400?text=Design+7'"><div class="project-overlay"><h3 class="font-bold">Design 7</h3></div></div>
+                <div class="art-card" onclick="openLightbox('images/design-8.jpg', 'Design 8')"><img src="images/design-8.jpg" alt="D8" onerror="this.src='https://via.placeholder.com/400x400?text=Design+8'"><div class="project-overlay"><h3 class="font-bold">Design 8</h3></div></div>
+                <div class="art-card" onclick="openLightbox('images/design-9.jpg', 'Design 9')"><img src="images/design-9.jpg" alt="D9" onerror="this.src='https://via.placeholder.com/400x400?text=Design+9'"><div class="project-overlay"><h3 class="font-bold">Design 9</h3></div></div>
+                <div class="art-card" onclick="openLightbox('images/design-10.jpg', 'Design 10')"><img src="images/design-10.jpg" alt="D10" onerror="this.src='https://via.placeholder.com/400x400?text=Design+10'"><div class="project-overlay"><h3 class="font-bold">Design 10</h3></div></div>
+                <div class="art-card" onclick="openLightbox('images/design-11.jpg', 'Design 11')"><img src="images/design-11.jpg" alt="D11" onerror="this.src='https://via.placeholder.com/400x400?text=Design+11'"><div class="project-overlay"><h3 class="font-bold">Design 11</h3></div></div>
+                <div class="art-card" onclick="openLightbox('images/design-12.jpg', 'Design 12')"><img src="images/design-12.jpg" alt="D12" onerror="this.src='https://via.placeholder.com/400x400?text=Design+12'"><div class="project-overlay"><h3 class="font-bold">Design 12</h3></div></div>
+                <div class="art-card" onclick="openLightbox('images/design-13.jpg', 'Design 13')"><img src="images/design-13.jpg" alt="D13" onerror="this.src='https://via.placeholder.com/400x400?text=Design+13'"><div class="project-overlay"><h3 class="font-bold">Design 13</h3></div></div>
+                <div class="art-card" onclick="openLightbox('images/design-14.jpg', 'Design 14')"><img src="images/design-14.jpg" alt="D14" onerror="this.src='https://via.placeholder.com/400x400?text=Design+14'"><div class="project-overlay"><h3 class="font-bold">Design 14</h3></div></div>
+                <div class="art-card" onclick="openLightbox('images/design-15.jpg', 'Design 15')"><img src="images/design-15.jpg" alt="D15" onerror="this.src='https://via.placeholder.com/400x400?text=Design+15'"><div class="project-overlay"><h3 class="font-bold">Design 15</h3></div></div>
+                <div class="art-card" onclick="openLightbox('images/design-16.jpg', 'Design 16')"><img src="images/design-16.jpg" alt="D16" onerror="this.src='https://via.placeholder.com/400x400?text=Design+16'"><div class="project-overlay"><h3 class="font-bold">Design 16</h3></div></div>
+                <div class="art-card" onclick="openLightbox('images/design-17.jpg', 'Design 17')"><img src="images/design-17.jpg" alt="D17" onerror="this.src='https://via.placeholder.com/400x400?text=Design+17'"><div class="project-overlay"><h3 class="font-bold">Design 17</h3></div></div>
+                <div class="art-card" onclick="openLightbox('images/design-18.jpg', 'Design 18')"><img src="images/design-18.jpg" alt="D18" onerror="this.src='https://via.placeholder.com/400x400?text=Design+18'"><div class="project-overlay"><h3 class="font-bold">Design 18</h3></div></div>
+                <div class="art-card" onclick="openLightbox('images/design-19.jpg', 'Design 19')"><img src="images/design-19.jpg" alt="D19" onerror="this.src='https://via.placeholder.com/400x400?text=Design+19'"><div class="project-overlay"><h3 class="font-bold">Design 19</h3></div></div>
+                <div class="art-card" onclick="openLightbox('images/design-20.jpg', 'Design 20')"><img src="images/design-20.jpg" alt="D20" onerror="this.src='https://via.placeholder.com/400x400?text=Design+20'"><div class="project-overlay"><h3 class="font-bold">Design 20</h3></div></div>
+                <div class="art-card" onclick="openLightbox('images/design-21.jpg', 'Design 21')"><img src="images/design-21.jpg" alt="D21" onerror="this.src='https://via.placeholder.com/400x400?text=Design+21'"><div class="project-overlay"><h3 class="font-bold">Design 21</h3></div></div>
+                <div class="art-card" onclick="openLightbox('images/design-22.jpg', 'Design 22')"><img src="images/design-22.jpg" alt="D22" onerror="this.src='https://via.placeholder.com/400x400?text=Design+22'"><div class="project-overlay"><h3 class="font-bold">Design 22</h3></div></div>
+                <div class="art-card" onclick="openLightbox('images/design-23.jpg', 'Design 23')"><img src="images/design-23.jpg" alt="D23" onerror="this.src='https://via.placeholder.com/400x400?text=Design+23'"><div class="project-overlay"><h3 class="font-bold">Design 23</h3></div></div>
+                <div class="art-card" onclick="openLightbox('images/design-24.jpg', 'Design 24')"><img src="images/design-24.jpg" alt="D24" onerror="this.src='https://via.placeholder.com/400x400?text=Design+24'"><div class="project-overlay"><h3 class="font-bold">Design 24</h3></div></div>
+
             </div>
         </section>
 
@@ -203,10 +180,10 @@
         <section id="about-section" class="content-section">
             <div class="max-w-4xl mx-auto py-12">
                 <div class="bg-white p-8 rounded-2xl shadow-xl border border-gray-100 flex flex-col md:flex-row gap-8">
-                    <img src="images/profile.jpg" alt="Profile" class="w-48 h-48 rounded-full object-cover border-4 border-[#15acbe]/20">
+                    <img src="images/profile.jpg" alt="Profile" class="w-48 h-48 rounded-full object-cover border-4 border-[#15acbe]/20" onerror="this.src='https://via.placeholder.com/200'">
                     <div>
                         <h3 class="text-3xl font-bold logo-font mb-4">About Me</h3>
-                        <p class="text-gray-700 leading-relaxed mb-6">Replace this text with your bio. You have 48 projects total across your portfolio!</p>
+                        <p class="text-gray-700 leading-relaxed">Update your bio here. You can now control every image using simple img src tags.</p>
                     </div>
                 </div>
             </div>
@@ -216,15 +193,14 @@
 
     <!-- LIGHTBOX -->
     <div id="lightbox-modal" class="lightbox-modal fixed inset-0 z-[100] items-center justify-center bg-black bg-opacity-95">
-        <button id="lightbox-close" class="absolute top-6 right-6 text-white hover:text-[#15acbe] z-50">
+        <button onclick="closeLightbox()" class="absolute top-6 right-6 text-white hover:text-[#15acbe] z-50">
             <i data-lucide="x" class="w-10 h-10"></i>
         </button>
         
         <div class="relative w-full h-full flex flex-col items-center justify-center p-4">
-            <img id="lightbox-image" class="max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl" src="" alt="">
+            <img id="lightbox-image" class="max-w-full max-h-[90vh] object-contain rounded shadow-2xl" src="" alt="">
             <div class="mt-4 text-center text-white">
                 <h3 id="lightbox-title" class="text-xl font-bold"></h3>
-                <p id="lightbox-counter" class="text-sm opacity-60 mt-1"></p>
             </div>
         </div>
     </div>
@@ -232,43 +208,30 @@
     <script>
         lucide.createIcons();
 
-        // Collect all project data for the lightbox
-        const projects = [];
-        const projectElements = document.querySelectorAll('.art-placeholder');
-        
-        projectElements.forEach(el => {
-            projects.push({
-                src: el.getAttribute('data-src'),
-                title: el.getAttribute('data-title')
-            });
-        });
+        // Lightbox functions
+        function openLightbox(src, title) {
+            const modal = document.getElementById('lightbox-modal');
+            const modalImg = document.getElementById('lightbox-image');
+            const modalTitle = document.getElementById('lightbox-title');
+            
+            modalImg.src = src;
+            modalTitle.textContent = title;
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
 
-        const modal = document.getElementById('lightbox-modal');
-        const modalImg = document.getElementById('lightbox-image');
-        const modalTitle = document.getElementById('lightbox-title');
-        const modalCounter = document.getElementById('lightbox-counter');
-
-        projectElements.forEach((el, idx) => {
-            el.addEventListener('click', () => {
-                modalImg.src = projects[idx].src;
-                modalTitle.textContent = projects[idx].title;
-                modalCounter.textContent = `${idx + 1} / ${projects.length}`;
-                modal.classList.add('active');
-                document.body.style.overflow = 'hidden';
-            });
-        });
-
-        document.getElementById('lightbox-close').addEventListener('click', () => {
+        function closeLightbox() {
+            const modal = document.getElementById('lightbox-modal');
             modal.classList.remove('active');
             document.body.style.overflow = '';
-        });
+        }
 
         // Tab Switching Logic
         const navLinks = document.querySelectorAll('.nav-link');
         const sections = document.querySelectorAll('.content-section');
 
         navLinks.forEach(link => {
-            link.addEventListener('click', (e) => {
+            link.addEventListener('click', () => {
                 const target = link.getAttribute('data-section');
                 navLinks.forEach(l => l.classList.remove('active'));
                 sections.forEach(s => s.classList.remove('active'));
